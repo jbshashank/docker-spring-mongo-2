@@ -28,6 +28,19 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+	
+	private static final String SIGNATURE = "shashi@github1";
+	private static final String SUCCESS = "Success";
+	private static final String ERROR = "Error";
+	
+
+	 @PostMapping(value="/webhooks",headers="Accept=application/json")
+	 public ResponseEntity<Void> Webhook(){
+	     //System.out.println("Creating User "+user.getName());
+	     
+	     return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+	 }
+	
     @GetMapping("/")
     public String index(Model model) {
 

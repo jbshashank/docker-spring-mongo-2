@@ -49,7 +49,7 @@ public class UserController {
     public String index(Model model) {
 
         
-        return "index2";
+        return "inde3";
     }
 
 	/*

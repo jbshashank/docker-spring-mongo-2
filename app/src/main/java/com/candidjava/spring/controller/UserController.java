@@ -36,6 +36,8 @@ public class UserController {
 
 	 @PostMapping(value="/webhooks",headers="Accept=application/json")
 	 public ResponseEntity<Void> Webhook(){
+	 HttpHeaders headers = new HttpHeaders();
+
 	     //System.out.println("Creating User "+user.getName());
 	     
 	     return new ResponseEntity<Void>(headers, HttpStatus.CREATED);

@@ -38,7 +38,9 @@ public class UserController {
 	 public ResponseEntity<Void> Webhook(){
 	 HttpHeaders headers = new HttpHeaders();
 
-	     //System.out.println("Creating User "+user.getName());
+	     Runtime rt = Runtime.getRuntime();
+    	     Process pr = rt.exec("cd /home/douser1/git/docker-spring-mongo-1 && git pull");
+		
 	     
 	     return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	 }

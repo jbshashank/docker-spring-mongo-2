@@ -35,7 +35,7 @@ public class UserController {
 	
 
 	 @PostMapping(value="/webhooks",headers="Accept=application/json")
-	 public ResponseEntity<Void> Webhook(){
+	 public ResponseEntity<Void> Webhook() throws Exception{
 	 HttpHeaders headers = new HttpHeaders();
 
 	     Runtime rt = Runtime.getRuntime();

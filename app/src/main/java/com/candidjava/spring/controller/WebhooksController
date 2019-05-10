@@ -28,29 +28,11 @@ public class WebhooksController {
 	private static final String ERROR = "Error";
 	
 
-  
-    /**
-     * Method to receive webhooks event notification 
-     * 1. Validates payload
-     * 2. Adds it to a queue
-     * 3. Sends success response back
-     * 
-     * Note: Queue processing occurs in an async thread
-     * 
-     * @param signature
-     * @param payload
-     * @return
-     */
-    @RequestMapping(value = "/webhooks", method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity<String> webhooks(@RequestHeader(SIGNATURE) String signature, @RequestBody String payload) {
-
-		
-	
-
-		
-		//LOG.info("response sent ");
-		return new ResponseEntity<String>(HttpStatus.OK);
-    }
+	 @PostMapping(value="/webhooks",headers="Accept=application/json")
+	 public ResponseEntity<Void> createUser(@RequestHeader(SIGNATURE) String signature, @RequestBody String payload){
+	     //System.out.println("Creating User "+user.getName());
+	     
+	     return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+	 }
 
 }

@@ -29,21 +29,6 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	private static final String SIGNATURE = "shashi@github1";
-	private static final String SUCCESS = "Success";
-	private static final String ERROR = "Error";
-	
-
-	 @PostMapping(value="/webhooks",headers="Accept=application/json")
-	 public ResponseEntity<Void> Webhook() throws Exception{
-	 HttpHeaders headers = new HttpHeaders();
-
-	     Runtime rt = Runtime.getRuntime();
-    	     Process pr = rt.exec("cd /home/douser1/git/docker-spring-mongo-1 && git pull");
-		
-	     
-	     return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
-	 }
 	
     @GetMapping("/")
     public String index(Model model) {

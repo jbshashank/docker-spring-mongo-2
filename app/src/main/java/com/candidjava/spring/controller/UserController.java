@@ -19,6 +19,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.candidjava.spring.bean.Employee;
 import com.candidjava.spring.service.UserService;
 import com.mongodb.MongoClient;
+import java.util.*;
+
 
 @RestController
 @RequestMapping(value={"/","/user"})
@@ -33,8 +35,20 @@ public class UserController {
     @GetMapping("/")
     public String index(Model model) {
 
-        
-        return "index1234";
+        int day, month, year;
+      int second, minute, hour;
+      GregorianCalendar date = new GregorianCalendar();
+     
+      day = date.get(Calendar.DAY_OF_MONTH);
+      month = date.get(Calendar.MONTH);
+      year = date.get(Calendar.YEAR);
+     
+      second = date.get(Calendar.SECOND);
+      minute = date.get(Calendar.MINUTE);
+      hour = date.get(Calendar.HOUR);
+ 
+      //System.out.println("Current date is  "+day+"/"+(month+1)+"/"+year);
+        return "Current date is  "+day+"/"+(month+1)+"/"+year;
     }
 
 	/*

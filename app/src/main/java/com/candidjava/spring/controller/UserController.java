@@ -48,7 +48,7 @@ public class UserController {
       hour = date.get(Calendar.HOUR);
  
       //System.out.println("Current date is  "+day+"/"+(month+1)+"/"+year);
-        return "Current date is"+day+"/"+(month+1)+"/"+year;
+        return "Current date is - "+day+"/"+(month+1)+"/"+year;
     }
 
 	/*
